@@ -10,33 +10,22 @@ Quartus prime
 ### THEORY 
 
 ## UP COUNTER 
-The counter is a digital sequential circuit and here it is a 4 bit counter, which simply means it can count from 0 to 15 and vice versa based upon the direction of counting (up/down). 
+The counter is a digital sequential circuit and here it is a 3 bit counter, which simply means it can count from 0 to 7 and vice versa based upon the direction of counting (up/down).
 
-The counter (“count“) value will be evaluated at every positive (rising) edge of the clock (“clk“) cycle.
-The Counter will be set to Zero when “reset” input is at logic high.
-The counter will be loaded with “data” input when the “load” signal is at logic high. Otherwise, it will count up or down.
-The counter will count up when the “up_down” signal is logic high, otherwise count down
+The counter (“count“) value will be evaluated at every positive (rising) edge of the clock (“clk“) cycle. The Counter will be set to Zero when “reset” input is at logic high. The counter will be loaded with “data” input when the “load” signal is at logic high. Otherwise, it will count up or down. The counter will count up when the “up_down” signal is logic high, otherwise count down
 
-Since we know that binary count sequences follow a pattern of octave (factor of 2) frequency division, and that J-K flip-flop multivibrators set up for the “toggle” mode are capable of performing this type of frequency division, we can envision a circuit made up of several J-K flip-flops, cascaded to produce four bits of output.
-The main problem facing us is to determine how to connect these flip-flops together so that they toggle at the right times to produce the proper binary sequence.
-Examine the following binary count sequence, paying attention to patterns preceding the “toggling” of a bit between 0 and 1:
-Binary count sequence, paying attention to patterns preceding the “toggling” of a bit between 0 and 1.
+Since we know that binary count sequences follow a pattern of octave (factor of 2) frequency division, and that J-K flip-flop multivibrators set up for the “toggle” mode are capable of performing this type of frequency division, we can envision a circuit made up of several J-K flip-flops, cascaded to produce four bits of output. The main problem facing us is to determine how to connect these flip-flops together so that they toggle at the right times to produce the proper binary sequence. Examine the following binary count sequence, paying attention to patterns preceding the “toggling” of a bit between 0 and 1: Binary count sequence, paying attention to patterns preceding the “toggling” of a bit between 0 and 1.
 
 Note that each bit in this four-bit sequence toggles when the bit before it (the bit having a lesser significance, or place-weight), toggles in a particular direction: from 1 to 0.
 
-
-
- 
- 
-
 Starting with four J-K flip-flops connected in such a way to always be in the “toggle” mode, we need to determine how to connect the clock inputs in such a way so that each succeeding bit toggles when the bit before it transitions from 1 to 0.
 
-The Q outputs of each flip-flop will serve as the respective binary bits of the final, four-bit count:
+The Q outputs of each flip-flop will serve as the respective binary bits of the final, 3-bit count:
 
  
  
 
-Four-bit “Up” Counter
+3-bit “Up” Counter
 
 ![Screenshot 2023-12-30 140044](https://github.com/Skathiranand/Exp-7-Synchornous-counters-/assets/147141136/cf07c32a-d068-48e1-9c7f-a32f5ee435d1)
 
@@ -49,7 +38,7 @@ This type of counter is normally referred to as a Down Counter, (CTD). In a bina
 ![Screenshot 2023-12-30 140114](https://github.com/Skathiranand/Exp-7-Synchornous-counters-/assets/147141136/ac79e7f7-e669-4617-a429-7307365bf2af)
 
 
-4-bit Count Down Counter
+3-bit Count Down Counter
 ### Procedure
 1)Create a New Project:
 
@@ -114,4 +103,4 @@ endmodule
 ![down truth table](https://github.com/Skathiranand/Exp-7-Synchornous-counters-/assets/147141136/7ae73057-b5f4-4eee-a0fa-68878dfb1ada)
 
 ### RESULTS 
-By this we have verified the truth table of 4-bit up-counter using verilog.
+By this we have verified the truth table of 3-bit up-counter using verilog.
